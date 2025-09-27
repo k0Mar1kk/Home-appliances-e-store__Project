@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "db:init": "mysql -u root -p < database/init.sql",
+    "db:reset": "mysql -u root -p -e 'DROP DATABASE IF EXISTS tech_store; CREATE DATABASE tech_store;' && npm run db:init",
+    "db:backup": "mysqldump -u root -p tech_store > backup/$(date +%Y%m%d_%H%M%S).sql"
+  }
+}
